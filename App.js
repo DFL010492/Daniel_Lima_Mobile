@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font'; 
+import * as SplashScreen from 'expo-splash-screen'; 
+import { useCallback } from 'react';
+import { View, Text } from 'react-native';
+import { styles } from './AppStyle';
+
+// Impede que a tela de splash desapareça automaticamente
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'BlackOpsOne': require('./assets/fonts/BlackOpsOne-Regular.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null; // Retorna null enquanto a fonte está carregando
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container} onLayout={onLayoutRootView}>
+      <Text style={styles.texto}>Projeto 2</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
