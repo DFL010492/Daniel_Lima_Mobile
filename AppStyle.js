@@ -13,4 +13,9 @@ export const styles = StyleSheet.create({
     fontWeight: "normal",
     color: "#333",
   },
+  imagem: {
+    width: 100, // Defina um tamanho fixo para a imagem
+    height: 100,
+    resizeMode: 'contain', // Ajusta a imagem sem distorcer
+  },
 });

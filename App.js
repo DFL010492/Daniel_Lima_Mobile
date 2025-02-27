@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font'; 
 import * as SplashScreen from 'expo-splash-screen'; 
 import { useCallback } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { styles } from './AppStyle';
 
 // Impede que a tela de splash desapareça automaticamente
@@ -25,6 +25,10 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.texto}>Projeto 2</Text>
+      <Image 
+      source={require('./assets/imagens/bat-logo.png')}
+      style={styles.imagem}
+      />
     </View>
   );
 }
