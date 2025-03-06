@@ -41,9 +41,7 @@ class Jobs extends Component {
     return (
       <View style={styles.jobsContainer}>
         <Text style={styles.texto}>Lanterna Verde</Text>
-        <View style={styles.imageWrapper}>
-          <Image source={img1} style={styles.imagem} />
-        </View>
+        <Image source={img1} style={styles.imagem} />
       </View>
     );
   }
