@@ -18,4 +18,15 @@ export const styles = StyleSheet.create({
     height: 100,
     resizeMode: 'contain', // Ajusta a imagem sem distorcer
   },
+  jobsContainer: {
+    alignItems: "center", // Centraliza tudo dentro do Jobs
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  imageWrapper: {
+    alignItems: "center", // Centraliza a imagem especificamente
+    justifyContent: "center",
+    width: "100%", // Ocupa toda a largura disponível
+  },
 });
+
