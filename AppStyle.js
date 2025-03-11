@@ -8,9 +8,6 @@ export const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
-  scrollView: {
-    padding: 20,
-  },
   title: {
     fontSize: 28,
     fontFamily: "BlackOpsOne",
@@ -26,22 +23,10 @@ export const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: "#555",
+    color: "black",
     textAlign: "center",
     marginVertical: 10,
-  },
-  infoContainer: {
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 10,
-    elevation: 3,
-    marginBottom: 20,
-  },
-  infoText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#444",
-    marginBottom: 5,
+    fontFamily: "Poller",
   },
   subTitle: {
     fontSize: 22,
@@ -55,8 +40,10 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 15,
     marginBottom: 10,
+    marginHorizontal: 16, // Adiciona espaçamento lateral
     borderRadius: 10,
     elevation: 3,
+    backgroundColor: "#E5BF3C",
   },
   avatar: {
     width: 50,
@@ -69,12 +56,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#222",
   },
-  cardSubtitle: {
-    fontSize: 14,
-    color: "#666",
-  },
   arrowIcon: {
     marginLeft: 'auto',
   },
-  
 });

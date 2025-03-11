@@ -1,12 +1,11 @@
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
-import { View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import { styles } from './AppStyle';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
-import Ionicons from 'react-native-vector-icons/Ionicons'; // Importando a biblioteca de ícones
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// Impede que a tela de splash desapareça automaticamente
 SplashScreen.preventAutoHideAsync();
 
 const integrantesLiga = [
@@ -21,6 +20,7 @@ const integrantesLiga = [
 export default function App() {
   const [fontsLoaded] = useFonts({
     'BlackOpsOne': require('./assets/fonts/BlackOpsOne-Regular.ttf'),
+    'Poller' : require('./assets/fonts/PollerOne-Regular.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -37,28 +37,31 @@ export default function App() {
     <View style={styles.container} onLayout={onLayoutRootView}>
       <SafeAreaProvider>
         <SafeAreaView edges={['top']} style={styles.safeArea}>
-          <ScrollView style={styles.scrollView}>
-            <Text style={styles.title}>Liga da Justiça</Text>
-            <Image source={require('./assets/imagens/jl.png')} style={styles.logo} />
-            <Text style={styles.description}>
-              A Liga da Justiça, também conhecida como Liga da Justiça da América (no original, Justice League of America),
-              é uma fictícia equipe de super-heróis originada nas histórias em quadrinhos publicadas pela DC Comics.
-            </Text>
-            <Text style={styles.subTitle}>Integrantes:</Text>
-            <FlatList
-              data={integrantesLiga}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
-                <TouchableOpacity style={styles.card}>
-                  <Image source={item.imagem} style={styles.avatar} />
-                  <View style={styles.cardContent}>
-                    <Text style={styles.cardTitle}>{item.nome}</Text>
-                  </View>
-                  <Ionicons name="chevron-forward" size={24} color="#000" style={styles.arrowIcon} />
-                </TouchableOpacity>
-              )}
-            />
-          </ScrollView>
+          <FlatList
+            contentContainerStyle={{ paddingHorizontal: 16 }} // Adiciona espaço nas laterais
+            ListHeaderComponent={
+              <>
+                <Text style={styles.title}>Liga da Justiça</Text>
+                <Image source={require('./assets/imagens/jl.png')} style={styles.logo} />
+                <Text style={styles.description}>
+                  A Liga da Justiça, também conhecida como Liga da Justiça da América (no original, Justice League of America),
+                  é uma fictícia equipe de super-heróis originada nas histórias em quadrinhos publicadas pela DC Comics.
+                </Text>
+                <Text style={styles.subTitle}>Integrantes:</Text>
+              </>
+            }
+            data={integrantesLiga}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <TouchableOpacity style={styles.card}>
+                <Image source={item.imagem} style={styles.avatar} />
+                <View style={styles.cardContent}>
+                  <Text style={styles.cardTitle}>{item.nome}</Text>
+                </View>
+                <Ionicons name="chevron-forward" size={24} color="#000" style={styles.arrowIcon} />
+              </TouchableOpacity>
+            )}
+          />
         </SafeAreaView>
       </SafeAreaProvider>
     </View>
