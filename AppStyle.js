@@ -3,32 +3,74 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#f8f8f8",
   },
-  texto: {
-    fontSize: 20,
-    fontFamily: "BlackOpsOne", // Nome da fonte carregada no useFonts
-    fontWeight: "normal",
-    color: "#333",
+  safeArea: {
+    flex: 1,
   },
-  imagem: {
-    width: 100, // Defina um tamanho fixo para a imagem
-    height: 100,
-    resizeMode: 'contain', // Ajusta a imagem sem distorcer
-    alignContent: "center",
-    justifyContent: "center",
+  scrollView: {
+    padding: 20,
   },
-  jobsContainer: {
-    alignItems: "center", // Centraliza tudo dentro do Jobs
-    justifyContent: "center",
-    marginTop: 20,
+  title: {
+    fontSize: 28,
+    fontFamily: "BlackOpsOne",
+    color: "#222",
+    textAlign: "center",
+    marginBottom: 10,
   },
   logo: {
-    resizeMode: 'contain',
-    alignSelf: 'center',
-    height: 180,
+    width: "100%",
+    height: 200,
+    resizeMode: "contain",
+    borderRadius: 10,
+  },
+  description: {
+    fontSize: 16,
+    color: "#555",
+    textAlign: "center",
+    marginVertical: 10,
+  },
+  infoContainer: {
+    backgroundColor: "#fff",
+    padding: 10,
+    borderRadius: 10,
+    elevation: 3,
+    marginBottom: 20,
+  },
+  infoText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#444",
+    marginBottom: 5,
+  },
+  subTitle: {
+    fontSize: 22,
+    fontFamily: "BlackOpsOne",
+    color: "#222",
+    marginBottom: 10,
+  },
+  card: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    padding: 15,
+    marginBottom: 10,
+    borderRadius: 10,
+    elevation: 3,
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 15,
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#222",
+  },
+  cardSubtitle: {
+    fontSize: 14,
+    color: "#666",
   },
 });
-
