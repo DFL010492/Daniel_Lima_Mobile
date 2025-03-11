@@ -25,5 +25,10 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 20,
   },
+  logo: {
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    height: 180,
+  },
 });
 

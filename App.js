@@ -1,8 +1,9 @@
 import { useFonts } from 'expo-font'; 
 import * as SplashScreen from 'expo-splash-screen'; 
 import { Component, useCallback } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView, } from 'react-native';
 import { styles } from './AppStyle';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 // Impede que a tela de splash desapareça automaticamente
 SplashScreen.preventAutoHideAsync();
@@ -24,26 +25,18 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={styles.texto}>Batman</Text>
-      <Image 
-      source={require('./assets/imagens/bat-logo.png')}
-      style={styles.imagem}
-      />
-      <Jobs />
-    </View>
+      <SafeAreaProvider>
+    <SafeAreaView edges={['top']}>
+      <ScrollView style={styles.scrollView}>
+        <Image
+          source={require('./assets/imagens/jl.png')}
+          style={styles.logo}
+        />
+      </ScrollView>
+    </SafeAreaView>
+  </SafeAreaProvider>
+  </View>
   );
 }
 
-class Jobs extends Component {
-  render() {
-    let img1 = require('./assets/imagens/symbol-on.png');
-
-    return (
-      <View style={styles.jobsContainer}>
-        <Text style={styles.texto}>Lanterna Verde</Text>
-        <Image source={img1} style={styles.imagem} />
-      </View>
-    );
-  }
-}
 
