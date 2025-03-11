@@ -73,4 +73,8 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: "#666",
   },
+  arrowIcon: {
+    marginLeft: 'auto',
+  },
+  
 });
